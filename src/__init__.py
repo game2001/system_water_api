@@ -5,6 +5,7 @@ from .common.config import common_config
 from .database.database_instance import db
 from .modules.user_module import user_bp
 from flask_jwt_extended import JWTManager
+from .modules.problem_module import problem_bp
 
 def create_app():
     template_dir = path.dirname(path.abspath(path.dirname(__file__)))
@@ -49,6 +50,7 @@ def create_app():
         db.create_all()
     
     app.register_blueprint(user_bp)
+    app.register_blueprint(problem_bp)
     
     
     @app.get("/")

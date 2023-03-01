@@ -19,21 +19,21 @@ class UserModel(db.Model):
 			'username': self.username,
 		}
   
-	# def get_reset_token(self, expiration=600):
-	# 	"""
-	# 	Generate a reset token for the user with a given expiration time.
+	def get_reset_token(self, expiration=600):
+		"""
+		Generate a reset token for the user with a given expiration time.
 
-	# 	:param expiration: The expiration time of the token in seconds (default: 600 seconds).
-	# 	:return: The reset token as a string.
-	# 	"""
-	# 	# Generate a random string for the token
-	# 	reset_token = secrets.token_urlsafe(32)
+		:param expiration: The expiration time of the token in seconds (default: 600 seconds).
+		:return: The reset token as a string.
+		"""
+		# Generate a random string for the token
+		reset_token = secrets.token_urlsafe(32)
 
-	# 	# Set the reset token and expiration time in the user object
-	# 	self.reset_token = reset_token
-	# 	self.reset_token_expiration = datetime.datetime.utcnow() + datetime.timedelta(seconds=expiration)
+		# Set the reset token and expiration time in the user object
+		self.reset_token = reset_token
+		self.reset_token_expiration = datetime.datetime.utcnow() + datetime.timedelta(seconds=expiration)
 
-	# 	# Commit the changes to the database
-	# 	db.session.commit()
+		# Commit the changes to the database
+		db.session.commit()
 
-	# 	return reset_token
+		return reset_token
