@@ -1,0 +1,5 @@
+JWT_SECRET_KEY=
+SQLALCHEMY_DB_URI_TEST=
+SQLALCHEMY_DB_URI_PROD=
+SQLALCHEMY_DB_URI_DEV=mysql+pymysql://root:@localhost/system_water_app
+SECRET_KEY=
